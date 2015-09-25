@@ -14,7 +14,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.TimeZone;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
@@ -121,13 +120,14 @@ public class Tutorial implements IXposedHookLoadPackage,IXposedHookZygoteInit {
                             StringBuilder sb = new StringBuilder();
                             sb.append("Diff");
 
-                            Map<String,?> keys = prefs.getAll();
-                            XposedBridge.log("count ->" + keys.size());
+//                            Map<String,?> keys = prefs.getAll();
+//                            XposedBridge.log("count ->" + keys.size());
+//
+//                            for(Map.Entry<String,?> entry : keys.entrySet()){
+//                                sb.append(entry.getKey()).append(" -- ").append(entry.getValue().toString());
+//                            }
 
-                            for(Map.Entry<String,?> entry : keys.entrySet()){
-                                sb.append(entry.getKey()).append(" -- ").append(entry.getValue().toString());
-                            }
-                            String toastText = sb.toString();
+                            String toastText = "Madrid - 10:00 \nLondon - 09:00 \nNew York - 04:00";
                             Toast.makeText(AndroidAppHelper.currentApplication().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
                         }
                     });
